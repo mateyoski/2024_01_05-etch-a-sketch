@@ -1,15 +1,14 @@
-const grid = document.querySelector('.container');
-
-function createDivs() {
-for (let i = 1; i < 16; i++) {
-    const node = document.createElement('div');
-    for(let j = 1; j < 16; j++) {
-        const div = document.createElement('div');
-        node.appendChild(div);
+const canvas = document.getElementById('canvas');
+function createGrid () {
+    for( let i = 0; i > 15; i++) {
+        const row = document.createElement("div");
+        row.classList.add("row");
+        for( let j = 0; j < 15; j++) {
+            const square = document.createElement("div");
+            square.classList.add("square");
+            square.style.border = "1px solid black"
+            row.appendChild(square);
+        }
+        canvas.appendChild(row);
     }
-    grid.appendChild(node)
 }
-}
-
-createDivs();
-
